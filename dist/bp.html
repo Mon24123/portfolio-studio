@@ -1,0 +1,1379 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="路见 AI 无障碍出行三端协同系统商业计划书">
+  <title>路见｜商业计划书</title>
+  <style>
+    :root {
+      --green: #08783f;
+      --green-dark: #096337;
+      --green-soft: #e8f5ed;
+      --lime: #8fd348;
+      --orange: #e28719;
+      --orange-soft: #fff2df;
+      --blue: #4a90e2;
+      --blue-soft: #edf4ff;
+      --ink: #16231c;
+      --muted: #68746d;
+      --line: #dfe7e2;
+      --panel: #f5f7f6;
+      --page: #ffffff;
+      --canvas: #e9eeeb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--canvas);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 56px;
+      border-bottom: 1px solid rgba(8, 120, 63, 0.14);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+    }
+
+    .topbar-inner {
+      width: min(1100px, calc(100% - 32px));
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      color: var(--green);
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .top-actions a,
+    .top-actions button {
+      min-height: 34px;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      color: #3d4942;
+      background: #fff;
+      font: inherit;
+      font-size: 13px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .top-actions .demo-link {
+      border-color: var(--green);
+      color: #fff;
+      background: var(--green);
+      font-weight: 700;
+    }
+
+    .deck {
+      display: grid;
+      gap: 24px;
+      padding: 24px 0 56px;
+    }
+
+    .slide {
+      position: relative;
+      width: min(1100px, calc(100% - 32px));
+      min-height: 618px;
+      margin: 0 auto;
+      padding: 46px 52px 52px;
+      overflow: hidden;
+      border: 1px solid #e3e9e5;
+      background: var(--page);
+      box-shadow: 0 8px 28px rgba(28, 61, 42, 0.07);
+    }
+
+    .slide.cover {
+      min-height: 618px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--green-dark);
+      text-align: center;
+    }
+
+    .cover-inner {
+      width: min(720px, 100%);
+    }
+
+    .cover h1 {
+      margin: 0 0 16px;
+      font-size: clamp(46px, 7vw, 74px);
+      line-height: 1;
+      letter-spacing: 0.08em;
+    }
+
+    .cover .subtitle {
+      margin: 0 0 8px;
+      font-size: 19px;
+    }
+
+    .cover .slogan {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 14px;
+    }
+
+    .cover .owner {
+      margin-top: 78px;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 13px;
+    }
+
+    .award {
+      margin: 54px auto 0;
+      padding: 12px 18px;
+      border-radius: 6px;
+      color: #164524;
+      background: var(--lime);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--green);
+      font-size: clamp(27px, 3.6vw, 36px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle-line {
+      margin: 6px 0 28px;
+      color: #98a19b;
+      font-size: 13px;
+    }
+
+    .slide-code,
+    .page-number {
+      position: absolute;
+      bottom: 20px;
+      color: var(--green);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .slide-code {
+      left: 52px;
+    }
+
+    .page-number {
+      right: 52px;
+      color: #7f8983;
+      letter-spacing: 0;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .stat {
+      padding: 16px;
+      border-radius: 9px;
+      background: var(--green-soft);
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--green);
+      font-size: 28px;
+      line-height: 1.2;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 4px;
+      color: #66746b;
+      font-size: 12px;
+    }
+
+    .problem-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .problem-item {
+      display: grid;
+      grid-template-columns: 50px minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+      min-height: 76px;
+      padding: 13px 18px;
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .problem-item .num {
+      color: #e34334;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .problem-item h3 {
+      margin: 0 0 3px;
+      font-size: 15px;
+    }
+
+    .problem-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .columns-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .role-card {
+      min-height: 355px;
+      padding: 21px;
+      border: 1px solid #72bf93;
+      border-radius: 9px;
+      background: #eff9f3;
+    }
+
+    .role-card.family {
+      border-color: #9ebde5;
+      background: #f2f6fc;
+    }
+
+    .role-card.governance {
+      border-color: #f0bb78;
+      background: var(--orange-soft);
+    }
+
+    .role-card h3 {
+      margin: 0 0 20px;
+      color: var(--green);
+      font-size: 18px;
+    }
+
+    .role-card.family h3 {
+      color: #456d9c;
+    }
+
+    .role-card.governance h3 {
+      color: #b96808;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .feature-list li {
+      display: grid;
+      grid-template-columns: 26px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      font-size: 13px;
+    }
+
+    .feature-list b {
+      display: grid;
+      place-items: center;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--green);
+      font-size: 10px;
+    }
+
+    .family .feature-list b {
+      background: var(--blue);
+    }
+
+    .governance .feature-list b {
+      background: var(--orange);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    th,
+    td {
+      padding: 15px 14px;
+      border-bottom: 9px solid #fff;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: #6e7872;
+      background: transparent;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    td {
+      background: var(--panel);
+    }
+
+    td:first-child {
+      color: var(--green);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .price {
+      color: #c98608;
+      font-weight: 800;
+    }
+
+    .note {
+      margin-top: 12px;
+      padding: 12px 16px;
+      border-radius: 7px;
+      color: #52665a;
+      background: var(--green-soft);
+      font-size: 12px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 28px;
+      margin-top: 64px;
+    }
+
+    .flow-item {
+      position: relative;
+      min-height: 190px;
+      padding: 18px 13px;
+      border: 1px solid #6dbd90;
+      border-radius: 9px;
+      background: #f2faf5;
+      text-align: center;
+    }
+
+    .flow-item:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      top: 50%;
+      right: -24px;
+      color: var(--green);
+      font-size: 17px;
+      font-weight: 800;
+      transform: translateY(-50%);
+    }
+
+    .flow-num {
+      display: inline-grid;
+      place-items: center;
+      width: 44px;
+      height: 34px;
+      margin-top: -36px;
+      border-radius: 20px;
+      color: #fff;
+      background: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .flow-item h3 {
+      margin: 18px 0 10px;
+      font-size: 15px;
+    }
+
+    .flow-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: 0.55fr 0.45fr 1.7fr;
+      gap: 20px;
+      align-items: end;
+      margin-top: 20px;
+    }
+
+    .demo-shot {
+      margin: 0;
+      text-align: center;
+    }
+
+    .demo-shot img {
+      display: block;
+      width: 100%;
+      max-height: 355px;
+      object-fit: contain;
+      border: 1px solid #e2e7e4;
+      border-radius: 7px;
+      background: #fff;
+    }
+
+    .demo-shot figcaption {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .demo-bottom {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 82px;
+      gap: 18px;
+      align-items: center;
+      margin-top: 16px;
+      padding: 10px 14px;
+      border-radius: 7px;
+      background: var(--green-soft);
+    }
+
+    .demo-bottom p {
+      margin: 0;
+      color: #506057;
+      font-size: 12px;
+    }
+
+    .demo-bottom img {
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px 20px;
+    }
+
+    .tech-card {
+      min-height: 170px;
+      padding: 18px 20px;
+      border-left: 4px solid var(--green);
+      border-radius: 0 8px 8px 0;
+      background: var(--panel);
+    }
+
+    .tech-card h3 {
+      margin: 0 0 8px;
+      color: var(--green);
+      font-size: 15px;
+    }
+
+    .tech-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      padding: 4px 12px;
+      border-radius: 4px;
+      color: var(--green);
+      background: var(--green-soft);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .comparison table {
+      table-layout: fixed;
+      font-size: 11px;
+    }
+
+    .comparison th {
+      color: #fff;
+      background: var(--green);
+    }
+
+    .comparison th,
+    .comparison td {
+      padding: 12px 10px;
+      border: 1px solid #e5ebe7;
+    }
+
+    .comparison td {
+      background: #fff;
+    }
+
+    .comparison td:last-child {
+      color: var(--green);
+      background: var(--green-soft);
+      font-weight: 700;
+    }
+
+    .business-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .business-card {
+      min-height: 330px;
+      padding: 22px 17px;
+      border-radius: 8px;
+      background: var(--green-soft);
+    }
+
+    .business-card:nth-child(2) {
+      background: var(--orange-soft);
+    }
+
+    .business-card:nth-child(3) {
+      background: var(--blue-soft);
+    }
+
+    .business-card:nth-child(4) {
+      background: var(--panel);
+    }
+
+    .business-card .type {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .business-card:nth-child(2) .type {
+      color: var(--orange);
+    }
+
+    .business-card:nth-child(3) .type {
+      color: var(--blue);
+    }
+
+    .business-card h3 {
+      margin: 28px 0 16px;
+      font-size: 16px;
+    }
+
+    .business-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .business-card .status {
+      display: block;
+      margin-top: 50px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .business-card:nth-child(2) .status {
+      color: var(--orange);
+    }
+
+    .business-card:nth-child(3) .status {
+      color: var(--blue);
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 34px;
+      margin: 90px 36px 0;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 22px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: #cfe3d6;
+    }
+
+    .phase {
+      position: relative;
+      text-align: center;
+    }
+
+    .phase-num {
+      position: relative;
+      z-index: 1;
+      display: inline-grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--green);
+      font-weight: 800;
+    }
+
+    .phase:first-child .phase-num {
+      background: #d99a13;
+    }
+
+    .phase h3 {
+      margin: 28px 0 10px;
+      font-size: 17px;
+    }
+
+    .phase p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .roadmap-detail {
+      margin: 45px 0 0;
+      padding: 14px 20px;
+      border-radius: 7px;
+      background: var(--panel);
+      color: #657069;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .resource-card {
+      padding: 22px;
+      border-radius: 8px;
+      background: var(--green-soft);
+    }
+
+    .resource-card strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--green);
+      font-size: 16px;
+    }
+
+    .resource-card span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .resource-note {
+      margin-top: 22px;
+      color: #8b948f;
+      font-size: 11px;
+    }
+
+    .closing {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 210px;
+      gap: 60px;
+      align-items: center;
+      min-height: 390px;
+    }
+
+    .closing h2 {
+      margin-bottom: 12px;
+      font-size: 56px;
+    }
+
+    .closing .slogan {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .closing .meta {
+      margin-top: 70px;
+      color: #66736b;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .qr-box {
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: #fff;
+      text-align: center;
+    }
+
+    .qr-box img {
+      display: block;
+      width: 100%;
+    }
+
+    .qr-box a {
+      display: block;
+      margin-top: 12px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    @media (max-width: 860px) {
+      .slide {
+        min-height: 0;
+        padding: 36px 30px 55px;
+      }
+
+      .slide.cover {
+        min-height: 620px;
+      }
+
+      .slide-code {
+        left: 30px;
+      }
+
+      .page-number {
+        right: 30px;
+      }
+
+      .columns-3,
+      .tech-grid,
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .role-card {
+        min-height: 0;
+      }
+
+      .flow {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-top: 34px;
+      }
+
+      .flow-item {
+        min-height: 0;
+        text-align: left;
+      }
+
+      .flow-item:not(:last-child)::after {
+        content: "↓";
+        top: auto;
+        right: 50%;
+        bottom: -24px;
+        transform: translateX(50%);
+      }
+
+      .flow-num {
+        margin-top: 0;
+      }
+
+      .flow-item h3 {
+        display: inline;
+        margin-left: 10px;
+      }
+
+      .flow-item p {
+        margin-top: 10px;
+      }
+
+      .demo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: start;
+      }
+
+      .demo-shot.governance {
+        grid-column: 1 / -1;
+      }
+
+      .business-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .business-card {
+        min-height: 0;
+      }
+
+      .business-card .status {
+        margin-top: 24px;
+      }
+
+      .timeline {
+        grid-template-columns: 1fr;
+        gap: 26px;
+        margin: 36px 0 0;
+      }
+
+      .timeline::before {
+        top: 0;
+        bottom: 0;
+        left: 22px;
+        right: auto;
+        width: 2px;
+        height: auto;
+      }
+
+      .phase {
+        display: grid;
+        grid-template-columns: 46px minmax(0, 1fr);
+        gap: 18px;
+        text-align: left;
+      }
+
+      .phase h3 {
+        margin: 0 0 8px;
+      }
+
+      .phase p {
+        grid-column: 2;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .top-actions button {
+        display: none;
+      }
+
+      .deck {
+        gap: 12px;
+        padding-top: 12px;
+      }
+
+      .slide {
+        width: calc(100% - 20px);
+        padding: 28px 20px 50px;
+      }
+
+      .slide-code {
+        left: 20px;
+      }
+
+      .page-number {
+        right: 20px;
+      }
+
+      .stats,
+      .business-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .problem-item {
+        grid-template-columns: 34px minmax(0, 1fr);
+        gap: 10px;
+      }
+
+      .demo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .demo-shot.governance {
+        grid-column: auto;
+      }
+
+      .demo-shot img {
+        max-height: 420px;
+      }
+
+      .demo-bottom {
+        grid-template-columns: 1fr;
+      }
+
+      .demo-bottom img {
+        display: none;
+      }
+
+      .closing {
+        grid-template-columns: 1fr;
+      }
+
+      .closing h2 {
+        font-size: 48px;
+      }
+
+      .closing .meta {
+        margin-top: 34px;
+      }
+
+      .qr-box {
+        display: none;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      .topbar {
+        display: none;
+      }
+
+      .deck {
+        display: block;
+        padding: 0;
+      }
+
+      .slide {
+        width: 100%;
+        min-height: 100vh;
+        border: 0;
+        box-shadow: none;
+        break-after: page;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">路见 · 商业计划书</a>
+      <div class="top-actions">
+        <a href="index.html">返回主页</a>
+        <button type="button" onclick="window.print()">打印 / 保存 PDF</button>
+        <a class="demo-link" href="https://bc70e4277289472ba066411826c8a06d.gz2.agentos-app.net" target="_blank" rel="noopener">体验 Demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="deck">
+    <section class="slide cover">
+      <div class="cover-inner">
+        <h1>路见</h1>
+        <p class="subtitle">AI 无障碍出行三端协同系统</p>
+        <p class="slogan">让每一段盲道，都被看见</p>
+        <p class="owner">项目负责人：毛雨晴 · 团队项目<br>2026年7月</p>
+        <div class="award">项目早期方案获2026年“工科女生未来赋能计划”全国总决赛第一名</div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>视障出行：一个被忽视的日常困境</h2>
+      <p class="subtitle-line">1700万人每天面对的真实问题</p>
+
+      <div class="stats">
+        <div class="stat">
+          <strong>1700万+</strong>
+          <span>中国视障人群</span>
+        </div>
+        <div class="stat">
+          <strong>2023.9.1</strong>
+          <span>《无障碍环境建设法》施行</span>
+        </div>
+        <div class="stat">
+          <strong>约400只</strong>
+          <span>全国在役导盲犬</span>
+        </div>
+      </div>
+
+      <div class="problem-list">
+        <article class="problem-item">
+          <div class="num">01</div>
+          <div>
+            <h3>盲道被占是常态，不是例外</h3>
+            <p>违停车辆、共享单车、施工围挡——盲人出门就面临“盲道通向障碍”的现实。</p>
+          </div>
+        </article>
+        <article class="problem-item">
+          <div class="num">02</div>
+          <div>
+            <h3>问题发现靠投诉，处理靠运气</h3>
+            <p>盲道占用发现晚、上报慢、处理无闭环，缺少系统化检测—上报—治理机制。</p>
+          </div>
+        </article>
+        <article class="problem-item">
+          <div class="num">03</div>
+          <div>
+            <h3>法律已经施行，基层仍缺工具</h3>
+            <p>《无障碍环境建设法》明确禁止占用无障碍设施，落地治理仍需要持续巡查和处置工具。</p>
+          </div>
+        </article>
+      </div>
+      <div class="slide-code">PROBLEM</div>
+      <div class="page-number">02</div>
+    </section>
+
+    <section class="slide">
+      <h2>路见：三端协同的无障碍出行方案</h2>
+      <p class="subtitle-line">出行端 · 家属端 · 治理端</p>
+
+      <div class="columns-3">
+        <article class="role-card">
+          <h3>出行端</h3>
+          <ol class="feature-list">
+            <li><b>01</b><span>路线查询 · AI 低风险推荐</span></li>
+            <li><b>02</b><span>实时避障 · 5–15米语音预警</span></li>
+            <li><b>03</b><span>风险回传 · 自动沉淀反哺</span></li>
+            <li><b>04</b><span>零硬件门槛 · 手机即用</span></li>
+          </ol>
+        </article>
+        <article class="role-card family">
+          <h3>家属端</h3>
+          <ol class="feature-list">
+            <li><b>01</b><span>同行守护 · 实时位置行程</span></li>
+            <li><b>02</b><span>异常求助 · 偏离一键报警</span></li>
+            <li><b>03</b><span>语音联络 · 免看屏留言</span></li>
+            <li><b>04</b><span>授权管理 · 隐私可控</span></li>
+          </ol>
+        </article>
+        <article class="role-card governance">
+          <h3>治理端</h3>
+          <ol class="feature-list">
+            <li><b>01</b><span>数据看板 · 区域盲道占用热力图</span></li>
+            <li><b>02</b><span>工单系统 · 识别→建档→派单→处理</span></li>
+            <li><b>03</b><span>趋势分析 · 高频占用路段预警</span></li>
+            <li><b>04</b><span>政务 SaaS · 城管/残联按年订阅</span></li>
+          </ol>
+        </article>
+      </div>
+      <div class="slide-code">SOLUTION</div>
+      <div class="page-number">03</div>
+    </section>
+
+    <section class="slide">
+      <h2>产品分层方案</h2>
+      <p class="subtitle-line">用户端基础功能免费，治理端按年订阅付费</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>层级</th>
+              <th>方式</th>
+              <th>费用</th>
+              <th>怎么用</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>L1</td>
+              <td>手机基础版</td>
+              <td><span class="price">免费</span></td>
+              <td>扬声器播报障碍物信息，支持手持或固定在身上使用；不需要额外硬件。</td>
+            </tr>
+            <tr>
+              <td>L2</td>
+              <td>+ 骨传导耳机</td>
+              <td><span class="price">299–699元</span></td>
+              <td>蓝牙连接手机，双耳开放、不遮挡环境音。</td>
+            </tr>
+            <tr>
+              <td>L3</td>
+              <td>+ AI眼镜</td>
+              <td><span class="price">2000–5000元</span></td>
+              <td>摄像头位于眼镜端，解放双手；消费级眼镜 + 路见软件适配层。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note">只用手机就能使用基础功能；骨传导耳机和 AI 眼镜是可选配件，不是使用门槛。</div>
+      <div class="slide-code">PRODUCT</div>
+      <div class="page-number">04</div>
+    </section>
+
+    <section class="slide">
+      <h2>从风险发现到处理反馈</h2>
+      <p class="subtitle-line">AI发现 → 系统复核 → 事件建档 → 工单处置 → 结果回传</p>
+
+      <div class="flow">
+        <article class="flow-item">
+          <span class="flow-num">01</span>
+          <h3>AI检测</h3>
+          <p>识别疑似盲道障碍物</p>
+        </article>
+        <article class="flow-item">
+          <span class="flow-num">02</span>
+          <h3>系统复核</h3>
+          <p>连续多帧校验位置与障碍类型</p>
+        </article>
+        <article class="flow-item">
+          <span class="flow-num">03</span>
+          <h3>事件建档</h3>
+          <p>记录证据，生成待核验事件</p>
+        </article>
+        <article class="flow-item">
+          <span class="flow-num">04</span>
+          <h3>治理端确认</h3>
+          <p>管理人员核验，生成并派发工单</p>
+        </article>
+        <article class="flow-item">
+          <span class="flow-num">05</span>
+          <h3>结果回传</h3>
+          <p>更新路线风险，沉淀治理数据</p>
+        </article>
+      </div>
+
+      <div class="note">Demo 已完成前端流程；治理系统、派单权限和真实处置流程需要在试点中接入。</div>
+      <div class="slide-code">LOOP</div>
+      <div class="page-number">05</div>
+    </section>
+
+    <section class="slide">
+      <h2>产品 Demo：三端概念原型</h2>
+      <p class="subtitle-line">出行端语音导航 · 家属端实时守护 · 治理端事件闭环</p>
+
+      <div class="demo-grid">
+        <figure class="demo-shot">
+          <img src="bp-trip.jpg" alt="路见出行端路线查询界面">
+          <figcaption>出行端 · 路线查询与实时导航</figcaption>
+        </figure>
+        <figure class="demo-shot">
+          <img src="bp-family.jpg" alt="路见家属端同行守护界面">
+          <figcaption>家属端 · 同行守护</figcaption>
+        </figure>
+        <figure class="demo-shot governance">
+          <img src="bp-governance.jpg" alt="路见治理端事件处置工作台">
+          <figcaption>治理端 · 事件处置 / 区域态势 / 工单中心 / 治理分析</figcaption>
+        </figure>
+      </div>
+
+      <div class="demo-bottom">
+        <p>Demo 已覆盖三端主要交互，目前使用模拟数据，尚未接入真实模型、后端和政务系统。</p>
+        <img src="bp-demo-qr.jpg" alt="路见 H5 Demo 二维码">
+      </div>
+      <div class="slide-code">DEMO</div>
+      <div class="page-number">06</div>
+    </section>
+
+    <section class="slide">
+      <h2>技术方案与实现路径</h2>
+      <p class="subtitle-line">Demo 之外，还需要完成模型训练、后端开发和数据合规</p>
+
+      <div class="tech-grid">
+        <article class="tech-card">
+          <h3>AI视觉识别</h3>
+          <p>YOLO11 实时目标检测；基于迁移学习微调，不从头训练。</p>
+          <div class="tags"><span class="tag">YOLO11</span><span class="tag">迁移学习</span></div>
+        </article>
+        <article class="tech-card">
+          <h3>数据采集</h3>
+          <p>试点采集 + 街景数据 + 公开数据集；完成障碍图片的采集、清洗与标注。</p>
+          <div class="tags"><span class="tag">试点采集</span><span class="tag">数据标注</span></div>
+        </article>
+        <article class="tech-card">
+          <h3>后端架构</h3>
+          <p>Flutter 跨平台 App + Python 后端 API + 云端 GPU 推理；治理端按 SaaS 交付。</p>
+          <div class="tags"><span class="tag">Flutter</span><span class="tag">FastAPI</span></div>
+        </article>
+        <article class="tech-card">
+          <h3>数据合规</h3>
+          <p>位置数据脱敏、上报数据匿名化，遵循个人信息保护与无障碍相关法律。</p>
+          <div class="tags"><span class="tag">数据脱敏</span><span class="tag">匿名化</span></div>
+        </article>
+      </div>
+      <div class="slide-code">TECH</div>
+      <div class="page-number">07</div>
+    </section>
+
+    <section class="slide comparison">
+      <h2>与现有方案相比，路见多做了一步治理闭环</h2>
+      <p class="subtitle-line">用户发现的盲道障碍，可以进入核验、派单、处理和反馈流程</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>维度</th>
+              <th>导盲犬</th>
+              <th>Be My Eyes</th>
+              <th>OrCam MyEye</th>
+              <th>路见</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>主要场景</td>
+              <td>户外通行辅助</td>
+              <td>远程视觉协助</td>
+              <td>可穿戴识别</td>
+              <td>盲道风险识别与上报</td>
+            </tr>
+            <tr>
+              <td>使用方式</td>
+              <td>人与犬协同</td>
+              <td>手机/智能眼镜</td>
+              <td>专用穿戴设备</td>
+              <td>手机基础版 + 可选穿戴</td>
+            </tr>
+            <tr>
+              <td>服务成熟度</td>
+              <td>成熟专业服务</td>
+              <td>百万级用户平台</td>
+              <td>商业化产品</td>
+              <td>概念验证 Demo</td>
+            </tr>
+            <tr>
+              <td>治理衔接</td>
+              <td>非核心功能</td>
+              <td>非核心功能</td>
+              <td>非核心功能</td>
+              <td>拟接入工单闭环</td>
+            </tr>
+            <tr>
+              <td>进入门槛</td>
+              <td>训练资源稀缺</td>
+              <td>用户端免费</td>
+              <td>专用硬件成本较高</td>
+              <td>基础版拟免费</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="slide-code">COMPETITION</div>
+      <div class="page-number">08</div>
+    </section>
+
+    <section class="slide">
+      <h2>谁来使用，谁来付费</h2>
+      <p class="subtitle-line">三端都有人使用，治理端是现阶段主要付费方向</p>
+
+      <div class="business-grid">
+        <article class="business-card">
+          <div class="type">使用者</div>
+          <h3>视障用户</h3>
+          <p>使用出行端查询低风险路线、接收语音预警并上报盲道障碍。</p>
+          <span class="status">基础功能免费</span>
+        </article>
+        <article class="business-card">
+          <div class="type">使用者</div>
+          <h3>家属</h3>
+          <p>经用户授权后，通过家属端查看行程、接收异常提醒并提供远程协助。</p>
+          <span class="status">基础功能免费</span>
+        </article>
+        <article class="business-card">
+          <div class="type">使用者 / 付费方</div>
+          <h3>城管、残联等治理部门</h3>
+          <p>使用治理端查看区域风险、核验事件、派发工单并跟踪处理结果。</p>
+          <span class="status">按年订阅治理端服务</span>
+        </article>
+      </div>
+      <div class="slide-code">BIZ MODEL</div>
+      <div class="page-number">09</div>
+    </section>
+
+    <section class="slide">
+      <h2>发展规划：先验证安全，再验证付费</h2>
+      <p class="subtitle-line">从概念原型到真实用户测试，再到联合试点</p>
+
+      <div class="timeline">
+        <article class="phase">
+          <span class="phase-num">1</span>
+          <h3>0–6个月</h3>
+          <p>完成可用 MVP<br>建立安全评测指标<br>申请联合试点</p>
+        </article>
+        <article class="phase">
+          <span class="phase-num">2</span>
+          <h3>6–12个月</h3>
+          <p>完成真实用户测试<br>争取首个联合试点<br>验证骨传导方案</p>
+        </article>
+        <article class="phase">
+          <span class="phase-num">3</span>
+          <h3>12–24个月</h3>
+          <p>形成可复制试点方案<br>评估 AI 眼镜适配<br>验证付费意愿</p>
+        </article>
+      </div>
+
+      <div class="roadmap-detail">
+        Phase 1：真实用户访谈 → 障碍数据采集 → 模型安全评测<br>
+        Phase 2：申请城管/残联联合试点 → 打通最小工单闭环<br>
+        Phase 3：验证采购与付费路径 → 评估跨区域复制
+      </div>
+      <div class="slide-code">ROADMAP</div>
+      <div class="page-number">10</div>
+    </section>
+
+    <section class="slide">
+      <h2>我在项目中做了什么</h2>
+      <p class="subtitle-line">获奖后复盘原方案，重构三端架构并重做 Demo 和商业计划书</p>
+
+      <div class="resource-grid">
+        <article class="resource-card">
+          <strong>参赛与获奖</strong>
+          <span>2026年参加“工科女生未来赋能计划”全国总决赛，项目早期方案获第一名。</span>
+        </article>
+        <article class="resource-card">
+          <strong>赛后复盘</strong>
+          <span>活动结束后复盘原双端方案，重新梳理目标用户与使用场景，新增家属端。</span>
+        </article>
+        <article class="resource-card">
+          <strong>新版三端 Demo</strong>
+          <span>设计出行端、家属端、治理端核心流程，用 AI 对话式编程完成可交互 Demo。</span>
+        </article>
+        <article class="resource-card">
+          <strong>新版商业计划书</strong>
+          <span>根据重构后的三端架构，重新梳理产品方案、治理流程与商业模式。</span>
+        </article>
+      </div>
+
+      <div class="slide-code">MY ROLE</div>
+      <div class="page-number">11</div>
+    </section>
+
+    <section class="slide">
+      <div class="closing">
+        <div>
+          <h2>路见</h2>
+          <p class="slogan">让每一段盲道，都被看见</p>
+          <p class="meta">
+            项目负责人：毛雨晴<br>
+            项目早期方案获2026年“工科女生未来赋能计划”全国总决赛第一名<br>
+            赛后重新梳理为三端概念原型，当前数据为模拟
+          </p>
+        </div>
+        <div class="qr-box">
+          <img src="bp-demo-qr.jpg" alt="路见 H5 Demo 二维码">
+          <a href="https://bc70e4277289472ba066411826c8a06d.gz2.agentos-app.net" target="_blank" rel="noopener">打开 H5 Demo</a>
+        </div>
+      </div>
+      <div class="slide-code">LUJIAN</div>
+      <div class="page-number">12</div>
+    </section>
+  </main>
+</body>
+</html>
