@@ -116,3 +116,14 @@ img {
 @media print {
   .hero-board, .project-visual, .lujian-screens, .content-evidence { display: none !important; }
 }
+
+/* Good Time uses the original portfolio diagrams, shown without cropping. */
+.goodtime-visual { background: #e7f3ee; }
+.goodtime-preview { max-width: 560px; margin-inline: auto; border-radius: 18px; overflow: hidden; }
+.goodtime-preview img { width: 100%; height: auto; }
+.goodtime-panel-link { margin-top: 14px; align-self: flex-start; }
+.project-goodtime > * { min-width: 0; }
+@media (max-width: 760px) {
+  .project-goodtime .project-meta { flex-wrap: wrap; gap: 10px; }
+  .goodtime-visual .visual-caption { flex-wrap: wrap; }
+}
