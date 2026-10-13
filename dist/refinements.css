@@ -1,0 +1,54 @@
+/* Consistent project rhythm, compact product evidence, larger UI preview. */
+.work-section{padding-top:62px}.work-section>article{margin:0 0 56px}.work-section>article:last-child{margin-bottom:0}
+.hero{padding-block:52px 44px}.hero h1{font-size:clamp(36px,3.7vw,54px);line-height:1.22}.showcase-grid{grid-template-columns:1.08fr 1fr;grid-template-rows:repeat(2,minmax(0,1fr))}.showcase-planter{grid-row:1/3}.showcase-planter>img{width:100%;height:auto;aspect-ratio:1/1;object-fit:contain;margin:0}.showcase-glim-image{flex:1 1 0;min-height:0;aspect-ratio:auto}.showcase-glim-image img{position:static;width:100%;height:100%;max-width:100%;object-fit:cover;object-position:right center}.showcase-time>img{flex:1 1 0;width:100%;height:0;min-height:0;object-fit:contain;margin:0;background:#d5f66c}
+.plain-section-heading{align-items:center;margin-bottom:28px}.plain-section-heading h2{font-size:clamp(34px,4vw,54px);margin:0;letter-spacing:-2px}.practice-section .plain-section-heading{margin-bottom:30px}.experience-section .plain-section-heading{margin-bottom:22px}
+.project>.project-copy{display:flex;flex-direction:column;justify-content:center}
+.project-carbon{grid-template-columns:.85fr 1.25fr}.project-carbon .project-copy{padding:28px}.project-carbon .project-visual{padding:24px}.project-carbon .project-intro{font-size:15px;line-height:1.8}.project-carbon h3>span{font-size:30px}
+.carbon-product-strip{display:grid;grid-template-columns:1fr 1fr;gap:18px}.carbon-product-strip figure{min-width:0}.carbon-product-strip button{width:100%}.carbon-product-strip img{width:100%;height:145px;object-fit:contain}.carbon-product-strip figcaption{font-size:13px;text-align:center;margin-top:6px}.carbon-app-label{font-size:17px;font-weight:800;margin:22px 0 10px;border-top:1px solid #bfd0bf;padding-top:16px}.carbon-app-preview{display:block;width:100%}.carbon-app-preview img{width:100%;height:auto;object-fit:contain}
+.lujian-project{grid-template-columns:.9fr 1.1fr;gap:30px;padding:32px;background:#e9e7e1;color:#182020}.lujian-copy{display:flex;flex-direction:column;min-width:0;padding:0}.lujian-copy h3{font-size:clamp(28px,2.7vw,39px);margin-top:18px;padding:0;line-height:1.32}.lujian-copy>p:not(.eyebrow){color:#4d4b47}.lujian-copy .lujian-award{border-left-color:#2454ee;margin:18px 0}.lujian-copy .button-light{border-color:#182020}.lujian-copy .quiet-link:hover{color:#2454ee}.lujian-copy>p.eyesee-mark{margin-top:auto;padding-top:24px;color:#182020;font-size:clamp(34px,3.2vw,46px)!important;font-weight:900;line-height:1!important;letter-spacing:-3px;word-spacing:.18em}.lujian-screens{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;padding:0;align-items:start}.lujian-screens figure{width:auto;justify-self:center;transform:none;margin:0;text-align:center}.lujian-screens figure:nth-child(2){padding:0;transform:none}.lujian-screens img{border:1.5px solid #182020;border-radius:12px;box-shadow:4px 4px 0 #b6b1a7;width:auto;height:280px;max-width:100%;object-fit:contain;background:transparent}.lujian-screens .governance-screen{grid-column:1/-1;width:220px}.lujian-screens .governance-screen img{width:100%;height:auto;max-height:none}.lujian-screens figcaption{color:#4d4b47;margin-top:7px;font-size:12px}.lujian-screens .governance-screen figcaption{font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.project-goodtime{grid-template-columns:1fr 1fr}.project-goodtime .project-copy,.project-goodtime .project-visual{padding:24px 28px}.project-goodtime .project-copy h3{margin-top:18px}.project-goodtime .project-copy h3>span{font-size:29px}.project-goodtime .project-intro{margin-top:13px;line-height:1.75}.project-goodtime .project-actions{margin-top:16px}.project-goodtime .visual-caption{margin-bottom:14px}.project-goodtime .visual-foot{margin-top:12px}
+.game-poster{padding:32px;background:radial-gradient(ellipse at top left,#562723,#151116 70%);color:#eeeae3;display:flex;flex-direction:column;justify-content:space-between;gap:24px}.game-poster>span:first-child{font-size:12px;letter-spacing:2px;color:#ff7c6e}.game-poster>strong{font-size:clamp(30px,3.6vw,50px);line-height:1.25}.game-poster b{font-family:Impact,sans-serif;font-size:1.9em;color:#ff5145}.game-poster p{font-size:17px}.game-poster-action{border-top:1px solid #79514c;padding-top:18px;font-size:15px}.project-game{min-width:0}
+/* Controlled brutalism: hard edges and shadows mark the hierarchy without crowding the content. */
+.hero-board{border-width:3px;border-radius:4px;box-shadow:10px 10px 0 var(--ink);transform:rotate(.7deg)}
+.showcase-piece{border-width:2px;border-radius:0;box-shadow:3px 3px 0 #182020}.showcase-piece>span{border-top:2px solid #182020}.showcase-piece:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 #182020}.showcase-more{border-top:2px solid rgba(255,255,255,.75);padding-top:10px}
+.button{border-width:2px;border-radius:0}.button-dark{box-shadow:4px 4px 0 var(--blue)}.button-light{box-shadow:4px 4px 0 #182020}.button:hover{transform:translate(-3px,-3px);box-shadow:6px 6px 0 var(--blue)}
+.project,.lujian-project{border:2px solid var(--ink);border-radius:0;box-shadow:8px 8px 0 var(--ink)}.project-visual{border-left-width:2px}.project-glim .glim-visual{border-right-width:2px}.project-index{border:0;background:var(--blue);color:#fff;padding:4px 8px;font-size:16px}.visual-caption{border-bottom:2px solid currentColor;padding-bottom:10px}.glim-feature{border-width:2px;border-radius:0;box-shadow:3px 3px 0 #182020}.glim-feature img{border-radius:0}.lujian-screens img{border-radius:0}.content-card,.operations-card,.skills-panel{border-width:2px;border-radius:0;box-shadow:7px 7px 0 var(--ink)}.experience-list{border-top-width:2px}
+@media(min-width:761px){.visit-evidence img{height:470px;object-fit:contain}}
+@media(max-width:760px){.hero{padding-block:38px 40px}.hero h1{font-size:36px}.work-section{padding-top:50px}.work-section>article{margin-bottom:32px}.plain-section-heading{display:flex;margin-bottom:22px}.plain-section-heading h2{font-size:36px}.project-carbon{grid-template-columns:1fr}.project-carbon .project-copy{padding:25px 22px}.project-carbon .project-visual{padding:20px 16px}.carbon-product-strip img{height:105px}.lujian-project{grid-template-columns:1fr;padding:25px 22px;gap:24px}.lujian-copy h3{order:initial;margin-top:20px;padding:0}.lujian-copy>p.eyesee-mark{margin-top:22px;padding-top:0;font-size:36px!important}.lujian-screens{margin:0;max-height:none;overflow:visible;gap:14px}.lujian-screens figure{width:auto}.lujian-screens img{width:100%;height:auto}.lujian-screens .governance-screen{width:180px}.lujian-screens .governance-screen img{max-height:none}.project-goodtime{grid-template-columns:1fr}.project-goodtime .project-copy,.project-goodtime .project-visual{padding:22px}.game-poster{padding:26px}.game-poster>strong{font-size:38px}}
+@media print{.work-section>article{margin-bottom:22px}.hero-board,.project,.lujian-project,.content-card,.operations-card,.skills-panel{box-shadow:none}.game-poster{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+
+
+/* English copy keeps the original layout, with room for longer words. */
+html[lang="en"] .hero-copy h1 {font-size:clamp(3rem,5.1vw,5.6rem);line-height:1.06;letter-spacing:-.045em;}
+html[lang="en"] .hero-description {max-width:38rem;}
+html[lang="en"] .project-copy h3 span {font-size:clamp(1.65rem,2.9vw,2.5rem);line-height:1.2;}
+html[lang="en"] .experience-key {font-size:.8rem;}
+.evidence-language-note {font-size:.72rem;margin:.5rem 1rem;color:var(--muted,#666);}
+html[lang="en"] .game-poster>strong {font-size:clamp(2rem,3.2vw,3.5rem);}
+@media(max-width:700px){html[lang="en"] .hero-copy h1{font-size:clamp(2.5rem,10vw,4rem);}html[lang="en"] .header nav{gap:.7rem;}html[lang="en"] .hero-meta{line-height:1.7;}html[lang="en"] .project-meta{flex-wrap:wrap;}}
+
+.evidence-language-note {color:#e8edff;margin:.4rem 1rem .8rem;}
+
+/* Readable English contribution summaries within the original project layout. */
+.contribution-facts{margin:1.2rem 0;font-size:.9rem;line-height:1.6;}
+.contribution-facts>div{display:block;margin:.75rem 0;}
+.contribution-facts dt{font-weight:700;color:inherit;margin-bottom:.25rem;}
+.contribution-facts dd{margin:0;color:inherit;opacity:.85;}
+.lujian-copy .contribution-facts{max-width:38rem;color:inherit;}
+.footer{flex-wrap:wrap;gap:1rem;}
+:focus-visible{outline:3px solid #527bff;outline-offset:4px;}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important;}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+.project-brief{max-width:850px;margin:3rem auto;padding:0 24px 4rem;line-height:1.75;}
+.project-brief h1{font-size:clamp(2.2rem,5vw,3.5rem);line-height:1.15;margin:1rem 0 2rem;}
+.project-brief h2{font-size:1.4rem;margin:2rem 0 .7rem;}
+.project-brief figure{margin:1.5rem 0;}
+.project-brief img{max-width:100%;height:auto;border-radius:12px;}
+.project-brief figcaption{font-size:.85rem;opacity:.75;margin-top:.6rem;}
+.brief-actions{display:flex;flex-wrap:wrap;gap:1rem;}
+
+.project-brief figure:nth-of-type(-n+2) img{width:auto;max-height:658px;}
+
+/* Instant language control, visible on desktop and touch screens. */
+.header .language-switch{flex-shrink:0;min-width:44px;min-height:44px;font:inherit;font-weight:700;cursor:pointer;}
+.language-switch{color:inherit;background:transparent;border:0;cursor:pointer;}
+@media(max-width:700px){.header{gap:12px;}.header .language-switch{margin-left:auto;}.header .nav-contact{margin-left:0;}}
